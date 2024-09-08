@@ -1,0 +1,33 @@
+.signup_form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup_form input {
+  border-radius: 15px;
+  width: 300px;
+  height: 25px;
+}
+
+.signup_form input::placeholder {
+  font-size: 16px;
+  color: blue;
+  text-align: center;
+}
+
+#signup-submit {
+  width: 300px;
+  height: 40px;
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+}
+
+#login #login-here {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}

@@ -1,0 +1,47 @@
+.home-home {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 50px;
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  z-index: 10;
+}
+
+#home-add-cmp,
+#home-logout {
+  background-color: orange;
+  border-radius: 5px;
+  height: 50px;
+  width: 200px;
+  color: black;
+  box-sizing: border-box;
+  font-size: 25px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px 1px black;
+}
+
+#home-add-cmp:hover,
+#home-logout:hover {
+  transform: scale(1.1);
+  transition: 0.22s ease;
+  background-color: blue;
+  color: white;
+  border: 1px dotted whitesmoke;
+}
+
+.post-by-admin {
+  margin-left: 100px;
+  margin-top: 60px;
+}
+.post-desc {
+  border-bottom: 1px dashed red;
+  width: 80%;
+  padding-left: 30px;
+}
+.home-title {
+  margin-bottom: 40px;
+}
+.home-title h1 {
+  color: brown;
+}
