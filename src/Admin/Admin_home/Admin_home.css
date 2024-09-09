@@ -1,0 +1,94 @@
+.admin-home-wrap {
+  margin-top: -20px;
+  padding: 0;
+  position: relative;
+}
+.side-bar-nav {
+  display: inline-block;
+  width: 15%;
+  position: sticky;
+}
+.side-ul {
+  background-color: #2c2c54;
+  height: 100vh;
+  padding: 10px;
+  text-align: center;
+}
+#parent {
+  font-weight: bold;
+  font-size: 30px;
+}
+.side-ul li {
+  list-style-type: none;
+  color: white;
+  font-size: 25px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.top-green {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 15%;
+  width: 85%;
+  height: 200px;
+  background-color: green;
+  text-align: center;
+  vertical-align: middle;
+}
+.top-green h1 {
+  color: white;
+}
+.top-green img {
+  height: 200px;
+  width: auto;
+}
+
+.anything-on-your-mind {
+  z-index: 10;
+  display: flex;
+  width: 85%;
+  position: absolute;
+  left: 30%;
+  top: 250px;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.anything-on-your-mind h1 {
+  position: relative;
+  left: 100px;
+}
+
+.anything-on-your-mind input,
+.anything-on-your-mind textarea {
+  width: 50%;
+  height: 50px;
+  border-radius: 15px;
+}
+.anything-on-your-mind input:focus,
+.anything-on-your-mind textarea:focus {
+  font-size: 20px;
+}
+
+.anything-on-your-mind input::placeholder,
+.anything-on-your-mind textarea::placeholder {
+  color: blue;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#post-admin {
+  height: 50px;
+  width: 50%;
+  border-radius: 15px;
+  background-color: blue;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}

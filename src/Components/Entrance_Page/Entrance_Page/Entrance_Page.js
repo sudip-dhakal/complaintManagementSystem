@@ -6,18 +6,13 @@ import axios from "axios";
 const Entrance_Page = (props) => {
   const [signUp, setSignUp] = useState(props.signup);
   const [data, setData] = useState([]);
+  const [adminData, setAdminData] = useState([]);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [adminUsername, setAdminUsername] = useState("");
-  const [adminPassword, setAdminPassword] = useState("");
 
   // for user credentials
   let tUserName = username.trim();
   let tPassword = password.trim();
-
-  //for admin credentials
-  let aUserName = adminUsername.trim();
-  let aPassWord = adminPassword.trim();
 
   let getData = () => {
     axios
@@ -27,14 +22,23 @@ const Entrance_Page = (props) => {
       });
   };
 
+  let getAdmin = () => {
+    axios
+      .get("https://66d581f5f5859a704266544c.mockapi.io/complainSys/admin")
+      .then((res) => {
+        setAdminData(res.data);
+      });
+  };
+
   useEffect(() => {
     getData();
+    getAdmin();
   }, []);
 
   const Navigate = useNavigate();
+  console.log(adminData);
 
   let handleUserLogin = () => {
-    console.log(`The data is : ${data.username}`);
     const users = data.find(
       (user) => user.username === tUserName && user.password === tPassword
     );
@@ -47,14 +51,13 @@ const Entrance_Page = (props) => {
   };
 
   let handleAdminLogin = () => {
-    const admins = data.find(
-      (admin) =>
-        admin.adminUsername === aUserName && admin.adminPassword === aPassWord
+    const admins = adminData.find(
+      (admin) => admin.username === tUserName && admin.password === tPassword
     );
     if (admins) {
-      Navigate("/Admin_home");
+      Navigate("/admin-home");
     } else {
-      alert("Invalid Username or password");
+      alert("Invalid Username and Password");
     }
   };
 
@@ -120,7 +123,7 @@ const Entrance_Page = (props) => {
           <div
             className="admin"
             onClick={() => {
-              Navigate(`/${props.who} `);
+              Navigate(`/${props.who}`);
             }}
           >
             {props.who} Login

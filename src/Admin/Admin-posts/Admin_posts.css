@@ -1,0 +1,35 @@
+#post-made {
+  background-color: green;
+  margin-top: -5px;
+  color: white;
+  box-sizing: content-box;
+  padding: 30px;
+}
+
+.admin-post-list {
+  margin-left: 10%;
+  background-color: #227093;
+  width: 80%;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+#sub,
+.admin-post-list p {
+  color: white;
+}
+
+#delete-btn {
+  height: 40px;
+  width: 100px;
+  font-size: 20px;
+  box-sizing: content-box;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 80px;
+  right: 30px;
+}

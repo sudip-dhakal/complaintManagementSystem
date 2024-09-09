@@ -5,6 +5,8 @@ import Admin_login from "./Components/Entrance_Page/Admin_Login/Admin_login";
 import Signup from "./Components/Entrance_Page/SignUp_Page/Signup";
 import Home from "./Inside_User/Home/Home";
 import Add_complaint from "./Inside_User/Add_Complaint/Add_complaint";
+import Admin_home from "./Admin/Admin_home/Admin_home";
+import Admin_posts from "./Admin/Admin-posts/Admin_posts";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/home" element={<Home />} />
           <Route path="/addComplaint" element={<Add_complaint />} />
+          <Route path="/admin-home" element={<Admin_home />} />
+          <Route path="/admin-posts" element={<Admin_posts />} />
         </Routes>
       </BrowserRouter>
     </>

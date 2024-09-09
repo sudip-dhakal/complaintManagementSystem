@@ -46,9 +46,9 @@ const Home = () => {
           <h1>Post made by admin for users</h1>
         </div>
       </div>
-      {adminDataList.map((item) => {
+      {adminDataList.map((item, index) => {
         return (
-          <div className="post-desc post-by-admin">
+          <div key={index} className="post-desc post-by-admin">
             <h3>Heading: {item.subject}</h3>
             <p>Story: {item.story}</p>
           </div>
