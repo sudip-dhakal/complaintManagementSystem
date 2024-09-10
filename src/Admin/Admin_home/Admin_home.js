@@ -8,7 +8,6 @@ const Admin_home = () => {
   const [obtained, setObtained] = useState([]);
   const [subject, setSubject] = useState("");
   const [story, setStory] = useState("");
-
   let obtained_data = () => {
     axios
       .get("https://66d581f5f5859a704266544c.mockapi.io/complainSys/admin")
@@ -22,9 +21,14 @@ const Admin_home = () => {
 
   let Navigation = useNavigate();
 
+  let setClear = () => {
+    setSubject("");
+    setStory("");
+  };
+
   let handlePost = () => {
     Navigation("/admin-posts", {
-      state: { data: obtained, setData: setObtained },
+      state: { data: obtained },
     });
   };
 
@@ -35,7 +39,7 @@ const Admin_home = () => {
         story: story,
       })
       .then(() => {
-        console.log("data sent to api successfully");
+        setClear();
       });
   };
 
@@ -47,11 +51,9 @@ const Admin_home = () => {
             <li id="parent">Menu</li>
             <hr />
             <br />
-            <li>Profile</li>
             <li onClick={handlePost}>Posts</li>
             <li>User</li>
             <li>Message</li>
-            <li>Logout</li>
           </ul>
         </div>
         <div className="top-green">
