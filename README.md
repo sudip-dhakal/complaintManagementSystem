@@ -1,0 +1,1 @@
+The Complaint Management System is the e-governance project. I have made this project for the college project. It is not the real project that records the public complaints and make the government officials warn about the things. It has no implementation for public.
