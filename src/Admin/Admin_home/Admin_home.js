@@ -43,6 +43,14 @@ const Admin_home = () => {
       });
   };
 
+  let lisUsers = () => {
+    Navigation("/users");
+  };
+
+  let messageLists = () => {
+    Navigation("/messages");
+  };
+
   return (
     <React.Fragment>
       <div className="admin-home-wrap">
@@ -52,8 +60,8 @@ const Admin_home = () => {
             <hr />
             <br />
             <li onClick={handlePost}>Posts</li>
-            <li>User</li>
-            <li>Message</li>
+            <li onClick={lisUsers}>User</li>
+            <li onClick={messageLists}>Message</li>
           </ul>
         </div>
         <div className="top-green">

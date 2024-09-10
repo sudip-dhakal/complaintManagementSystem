@@ -7,6 +7,8 @@ import Home from "./Inside_User/Home/Home";
 import Add_complaint from "./Inside_User/Add_Complaint/Add_complaint";
 import Admin_home from "./Admin/Admin_home/Admin_home";
 import Admin_posts from "./Admin/Admin-posts/Admin_posts";
+import User_lists from "./Admin/User_lists/User_lists";
+import Message_Lists from "./Admin/Message_Lists/Message_Lists";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/addComplaint" element={<Add_complaint />} />
           <Route path="/admin-home" element={<Admin_home />} />
           <Route path="/admin-posts" element={<Admin_posts />} />
+          <Route path="/users" element={<User_lists />} />
+          <Route path="/messages" element={<Message_Lists />} />
         </Routes>
       </BrowserRouter>
     </>
