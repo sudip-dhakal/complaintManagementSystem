@@ -34,14 +34,104 @@
   margin-left: 100px;
   margin-top: 60px;
 }
+
 .post-desc {
   border-bottom: 1px dashed red;
   width: 80%;
   padding-left: 30px;
 }
+
 .home-title {
   margin-bottom: 40px;
 }
+
 .home-title h1 {
   color: brown;
+}
+
+/* Responsive styles */
+
+/* For devices with a screen width up to 1024px */
+@media (max-width: 1024px) {
+  .home-home {
+    right: 20px;
+    top: 40px;
+    gap: 40px;
+  }
+
+  #home-add-cmp,
+  #home-logout {
+    max-width: 180px;
+    max-height: 45px;
+    font-size: 22px;
+  }
+
+  .post-by-admin {
+    margin-left: 80px;
+    margin-top: 50px;
+  }
+
+  .post-desc {
+    width: 75%;
+  }
+}
+
+/* For devices with a screen width up to 768px */
+@media (max-width: 768px) {
+  .home-home {
+    right: 15px;
+    top: 30px;
+    gap: 30px;
+  }
+
+  #home-add-cmp,
+  #home-logout {
+    width: 160px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .post-by-admin {
+    margin-left: 60px;
+    margin-top: 40px;
+  }
+
+  .post-desc {
+    width: 70%;
+    padding-left: 20px;
+  }
+}
+
+/* For mobile devices with a screen width up to 480px */
+@media (max-width: 480px) {
+  .home-home {
+    right: 10px;
+    top: 20px;
+    gap: 20px;
+  }
+
+  #home-add-cmp,
+  #home-logout {
+    width: 140px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  .post-by-admin {
+    margin-left: 40px;
+    margin-top: 30px;
+  }
+
+  .post-desc {
+    width: 90%;
+    padding-left: 15px;
+  }
+
+  .home-title {
+    margin-bottom: 20px;
+  }
+
+  .home-title h1 {
+    font-size: 24px;
+  }
 }
