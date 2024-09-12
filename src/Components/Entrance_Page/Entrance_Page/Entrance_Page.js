@@ -22,6 +22,8 @@ const Entrance_Page = (props) => {
       });
   };
 
+  console.log(adminData)
+
   let getAdmin = () => {
     axios
       .get("https://66d581f5f5859a704266544c.mockapi.io/complainSys/admin")

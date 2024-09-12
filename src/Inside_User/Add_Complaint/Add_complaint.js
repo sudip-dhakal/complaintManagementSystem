@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Add_Complaint.css";
 import logo from "../../assets/Logo.png";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Add_complaint = () => {
   const [phone, setPhone] = useState(null);
@@ -11,6 +12,7 @@ const Add_complaint = () => {
   const [reference, setReference] = useState(0);
   const [ids, setIds] = useState(null);
 
+  let Navigation = useNavigate();
   useEffect(() => {
     setReference(parseInt(Math.random() * (1000 - 1) + 1));
     const id = localStorage.getItem("id");
@@ -52,12 +54,15 @@ const Add_complaint = () => {
           subject: subject,
           complaint: complaint,
           contact: phone,
-        }, 
-        
+        }
       )
       .then((res) => {
         alert("Your Complaint Has been registered");
       });
+  };
+
+  let handleBack = () => {
+    Navigation("/home");
   };
 
   return (
@@ -127,6 +132,9 @@ const Add_complaint = () => {
           <div className="add-btn-btn">
             <button type="button" onClick={handleComplaintSubmit}>
               Submit Complaint
+            </button>
+            <button type="button" onClick={handleBack}>
+              Back
             </button>
           </div>
         </div>
