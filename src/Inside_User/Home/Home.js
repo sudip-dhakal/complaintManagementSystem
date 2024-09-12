@@ -19,7 +19,6 @@ const Home = () => {
   useEffect(() => {
     adminData();
   }, []);
-  console.log(adminDataList);
 
   let addComplaint = () => {
     Navigate("/addComplaint");

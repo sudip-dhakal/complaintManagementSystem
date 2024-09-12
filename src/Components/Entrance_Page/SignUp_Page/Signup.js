@@ -9,7 +9,8 @@ const Signup = () => {
   const [user_name, setUser_name] = useState("");
   const [myemail, setMyemail] = useState("");
   const [psw, setPsw] = useState("");
-
+  let Navigate = useNavigate();
+  
   let sendSignUpData = (e) => {
     e.preventDefault();
     axios
@@ -22,10 +23,10 @@ const Signup = () => {
       })
       .then(() => {
         alert("sign up successful");
+        Navigate("/");
       });
   };
 
-  let Navigate = useNavigate();
   return (
     <React.Fragment>
       <div className="signup">

@@ -4,14 +4,29 @@ import logo from "../../assets/Logo.png";
 import axios from "axios";
 
 const Add_complaint = () => {
-  const [phone, setPhone] = useState("");
+  const [phone, setPhone] = useState(null);
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [complaint, setComplaint] = useState("");
-  const [reference, setReference] = useState("");
+  const [reference, setReference] = useState(0);
+  const [ids, setIds] = useState(null);
 
   useEffect(() => {
     setReference(parseInt(Math.random() * (1000 - 1) + 1));
+    const id = localStorage.getItem("id");
+
+    axios
+      .get("https://66d581f5f5859a704266544c.mockapi.io/complainSys/data")
+      .then((res) => {
+        console.log(res.data);
+        if (id) {
+          setIds(id);
+          const user = res.data.find((item) => item.id === id);
+          if (user) {
+            setEmail(user.email);
+          }
+        }
+      });
   }, []);
 
   let todays_date = new Date();
@@ -30,13 +45,15 @@ const Add_complaint = () => {
       return false;
     }
     axios
-      .post("https://66d581f5f5859a704266544c.mockapi.io/complainSys/data", {
-        reference: reference,
-        email: email,
-        subject: subject,
-        complaint: complaint,
-        contact: phone,
-      })
+      .post(
+        `https://66d581f5f5859a704266544c.mockapi.io/complainSys/data/${ids}`,
+        {
+          reference: reference,
+          subject: subject,
+          complaint: complaint,
+          contact: phone,
+        }
+      )
       .then((res) => {
         alert("Your Complaint Has been registered");
       });
@@ -65,6 +82,16 @@ const Add_complaint = () => {
               value={reference}
             />
           </div>
+          <div className="email">
+            <label htmlFor="email">Email Id : </label>
+            <br />
+            <input
+              type="email"
+              value={email}
+              placeholder="Your email id here"
+              disabled
+            />
+          </div>
           <div className="phone">
             <label htmlFor="phone">Phone Number : </label>
             <br />
@@ -75,16 +102,7 @@ const Add_complaint = () => {
               onChange={(e) => setPhone(e.target.value)}
             />
           </div>
-          <div className="email">
-            <label htmlFor="email">Email Id : </label>
-            <br />
-            <input
-              type="email"
-              value={email}
-              placeholder="Your email id here"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
+
           <div className="subject">
             <label htmlFor="subject">Subject: </label>
             <br />

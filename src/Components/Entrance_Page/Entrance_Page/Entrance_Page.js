@@ -36,7 +36,6 @@ const Entrance_Page = (props) => {
   }, []);
 
   const Navigate = useNavigate();
-  console.log(adminData);
 
   let handleUserLogin = () => {
     const users = data.find(
@@ -44,6 +43,7 @@ const Entrance_Page = (props) => {
     );
     console.log(`The Result is ${users}`);
     if (users) {
+      localStorage.setItem("id", users.id);
       Navigate("/home");
     } else {
       alert("Invalid Username and Password");
