@@ -1,13 +1,16 @@
+/* General styles */
 .add-whole {
   padding: 0;
   margin: 0;
 }
+
 .add-headers {
   display: flex;
   width: 100%;
   background-color: green;
   justify-content: space-around;
 }
+
 .add-header2 span {
   color: white;
   font-size: 25px;
@@ -21,6 +24,7 @@
   width: 100%;
   padding: 10px;
 }
+
 .add-header img {
   height: 100px;
   width: auto;
@@ -47,6 +51,7 @@
   margin-top: 30px;
   margin-bottom: 20px;
 }
+
 .add-form label {
   font-size: 25px;
 }
@@ -72,4 +77,102 @@
   font-size: 20px;
   cursor: pointer;
   border-radius: 15px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .add-header h1 {
+    font-size: 24px;
+    top: 10px;
+    left: 100px;
+  }
+  
+  .add-header img {
+    height: 80px;
+  }
+  
+  .add-form {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .add-header h1 {
+    font-size: 20px;
+    top: 10px;
+    left: 80px;
+  }
+
+  .add-header img {
+    height: 60px;
+  }
+
+  .add-header2 span {
+    font-size: 20px;
+    top: 15px;
+    right: 10px;
+  }
+
+  .add-form {
+    width: 80%;
+  }
+
+  .add-form label {
+    font-size: 20px;
+  }
+
+  .add-form input {
+    font-size: 18px;
+  }
+
+  .add-form input::placeholder {
+    font-size: 14px;
+  }
+
+  .add-btn-btn button {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .add-header h1 {
+    font-size: 18px;
+    top: 5px;
+    left: 0;
+    position: static;
+  }
+
+  .add-header img {
+    margin-left: 0;
+    height: 50px;
+  }
+
+  .add-header2 span {
+    font-size: 16px;
+    top: 10px;
+    right: 0;
+  }
+
+  .add-form {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  .add-form label {
+    font-size: 18px;
+  }
+
+  .add-form input {
+    font-size: 16px;
+  }
+
+  .add-btn-btn button {
+    padding: 10px;
+    font-size: 16px;
+  }
 }
