@@ -45,14 +45,15 @@ const Add_complaint = () => {
       return false;
     }
     axios
-      .post(
+      .put(
         `https://66d581f5f5859a704266544c.mockapi.io/complainSys/data/${ids}`,
         {
           reference: reference,
           subject: subject,
           complaint: complaint,
           contact: phone,
-        }
+        }, 
+        
       )
       .then((res) => {
         alert("Your Complaint Has been registered");
